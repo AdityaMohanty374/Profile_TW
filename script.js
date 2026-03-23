@@ -1,4 +1,4 @@
-// ── Theme toggle ──────────────────────────────────────────────────────────────
+
 function applyTheme(isDark) {
   document.body.classList.toggle("dark", isDark);
   const icons = document.querySelectorAll("#theme-btn i, #theme-btn-mobile i");
@@ -22,7 +22,7 @@ function bindThemeBtn(id) {
 bindThemeBtn("theme-btn");
 bindThemeBtn("theme-btn-mobile");
 
-// ── Mobile menu toggle (replaces Bootstrap's data-bs-toggle) ─────────────────
+
 const mobileToggle = document.getElementById("mobile-toggle");
 const mobileMenu   = document.getElementById("mobile-menu");
 
@@ -31,13 +31,13 @@ if (mobileToggle && mobileMenu) {
     mobileMenu.classList.toggle("hidden");
   });
 
-  // Close mobile menu when a nav link is clicked
+  
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
   });
 }
 
-// ── Typed text animation ──────────────────────────────────────────────────────
+
 const typedEl = document.getElementById("typed-text");
 const roles = ["Python Developer", "ML/DL Engineer", "ECE Student", "Intern @ SecoudSoft"];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
@@ -60,7 +60,7 @@ function type() {
 }
 type();
 
-// ── Smooth scroll ─────────────────────────────────────────────────────────────
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
@@ -69,7 +69,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ── Fade-in on scroll ─────────────────────────────────────────────────────────
+
 const fadeEls = document.querySelectorAll(".fade-in");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -81,7 +81,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 fadeEls.forEach(el => observer.observe(el));
 
-// ── Live clock ────────────────────────────────────────────────────────────────
+
 function updateTime() {
   const el = document.getElementById("timeText");
   if (!el) return;
@@ -93,7 +93,7 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
-// ── Navbar shadow on scroll ───────────────────────────────────────────────────
+
 window.addEventListener("scroll", () => {
   const nav = document.getElementById("mainNav");
   if (nav) nav.style.boxShadow = window.scrollY > 10 ? "0 2px 20px rgba(0,0,0,0.1)" : "none";
